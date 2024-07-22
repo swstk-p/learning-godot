@@ -533,10 +533,6 @@ scale = Vector2(0.6, 0.6)
 position = Vector2(265, -34)
 scale = Vector2(0.6, 0.6)
 
-[node name="Coin7" parent="." instance=ExtResource("4_ewa6s")]
-position = Vector2(300, -28)
-scale = Vector2(0.6, 0.6)
-
 [node name="Coin6" parent="." instance=ExtResource("4_ewa6s")]
 position = Vector2(379, -34)
 scale = Vector2(0.6, 0.6)
