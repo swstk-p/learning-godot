@@ -15,4 +15,4 @@ func _process(_delta):
 
 func _on_body_entered(_body):
 	print("Plus one coin")
-	scale = og_scale if scale==og_scale*2 else og_scale*2
+	queue_free()
