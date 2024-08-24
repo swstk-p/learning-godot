@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://chk24niydmlil"]
+
+[ext_resource type="Script" path="res://scripts/bridge_part.gd" id="1_h5gre"]
+[ext_resource type="Texture2D" uid="uid://n4gx7doqwa7x" path="res://assets/sprites/world_tileset.png" id="1_laypj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al6fc"]
+atlas = ExtResource("1_laypj")
+region = Rect2(152, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nig8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al6fc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pq1aj"]
+radius = 8.0
+
+[node name="BridgePart" type="RigidBody2D"]
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_h5gre")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7nig8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_pq1aj")
