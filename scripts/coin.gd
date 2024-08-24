@@ -1,6 +1,9 @@
 extends Area2D
 
 var og_scale = scale
+@onready var game_manager = %GameManager
+@onready var animation_player = $AnimationPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass# Replace with function body.
@@ -14,5 +17,5 @@ func _process(_delta):
 
 
 func _on_body_entered(_body):
-	print("Plus one coin")
-	queue_free()
+	game_manager.add_score()
+	animation_player.play("pickup")

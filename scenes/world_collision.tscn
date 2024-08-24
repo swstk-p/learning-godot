@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://b38te06igley5"]
+
+[node name="WorldCollision" type="Area2D"]
+collision_layer = 2

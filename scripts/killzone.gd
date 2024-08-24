@@ -1,5 +1,4 @@
 extends Area2D
-
 @onready var timer = $Timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +12,10 @@ func _process(delta):
 
 func _on_body_entered(body):
 	print("DEAD!")
+	body.get_node("CollisionShape2D").queue_free() #relieves the body of its collisionShape, making it fall down because of gravity and no collsion
+	Engine.time_scale = 0.5 #to manipulate time scale (slow-mo, fast-mo) of the entire game
 	timer.start()
 
 func _on_timer_timeout():
+	Engine.time_scale = 1
 	get_tree().reload_current_scene()
